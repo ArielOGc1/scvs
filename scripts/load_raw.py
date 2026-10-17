@@ -1,9 +1,39 @@
 """Load raw data from local CSV files into the PostgreSQL database."""
 
+import csv
 import os
+from pathlib import Path
 
 import psycopg
 from dotenv import load_dotenv
+
+# Path to the directory containing the CSV files
+CSV_DIRECTORY = Path(__file__).resolve().parents[1] / "data" / "raw"
+# List of expected CSV files
+EXPECTED_CSV_FILES = [
+    "bi_ciiu",
+    "bi_compania",
+    "bi_ranking",
+    "bi_segmento",
+]
+
+
+def read_header(path):
+    """Read the header of a CSV file."""
+    with open(path, "r", newline="", encoding="utf-8-sig") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        new_header = [h.strip() for h in header]
+    return new_header
+
+
+for csv_file in EXPECTED_CSV_FILES:
+    csv_path = CSV_DIRECTORY / f"{csv_file}.csv"
+    if not csv_path.exists():
+        raise FileNotFoundError(f"Expected CSV file not found: {csv_path}")
+    header = read_header(csv_path)
+    print(f"{csv_file} header: {header} and length: {len(header)}")
+
 
 load_dotenv()
 try:
@@ -15,7 +45,10 @@ try:
         port=os.getenv("POSTGRES_PORT", "5432"),
     ) as conn:
         db_version = conn.execute("SELECT version();").fetchone()
-        print(f"Database version: {db_version[0]}")
+        if db_version is None:
+            raise ValueError("Failed to retrieve database version.")
+        else:
+            print(f"Database version: {db_version[0]}")
         # Create the 'raw' schema if it doesn't exist
         conn.execute("CREATE SCHEMA IF NOT EXISTS raw;")
         verify = conn.execute(
