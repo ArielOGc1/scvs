@@ -1,8 +1,9 @@
 """Load raw data from local CSV files into the PostgreSQL database."""
 
 import os
-from dotenv import load_dotenv
+
 import psycopg
+from dotenv import load_dotenv
 
 load_dotenv()
 try:
@@ -11,16 +12,24 @@ try:
         user=os.environ["POSTGRES_USER"],
         password=os.environ["POSTGRES_PASSWORD"],
         host=os.getenv("POSTGRES_HOST", "localhost"),
-        port=os.getenv("POSTGRES_PORT", 5432),
+        port=os.getenv("POSTGRES_PORT", "5432"),
     ) as conn:
-        with conn.cursor() as cursor:
-            cursor.execute("SELECT version();")
-            db_version = cursor.fetchone()
-            print(f"Database version: {db_version[0]}")
+        db_version = conn.execute("SELECT version();").fetchone()
+        print(f"Database version: {db_version[0]}")
+        # Create the 'raw' schema if it doesn't exist
+        conn.execute("CREATE SCHEMA IF NOT EXISTS raw;")
+        verify = conn.execute(
+            "SELECT schema_name FROM information_schema.schemata WHERE schema_name = %s",
+            ("raw",),
+        ).fetchone()
+        if verify is None:
+            raise ValueError("Failed to create schema 'raw'.")
+        conn.commit()
+
     print("Connection to the database established successfully.")
 except KeyError as e:
     print(f"Environment variable not found: {e.args[0]}")
 except psycopg.OperationalError as e:
     print(f"Operational error connecting to the database: {e}")
 except Exception as e:
-    print(f"Error connecting to the database: {e}")
+    print(f"Unexpected error: {e}")
