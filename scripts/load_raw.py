@@ -10,11 +10,11 @@ from dotenv import load_dotenv
 # Path to the directory containing the CSV files
 CSV_DIRECTORY = Path(__file__).resolve().parents[1] / "data" / "raw"
 # List of expected CSV files
-EXPECTED_CSV_FILES = [
+TABLES_NAME = [
+    "bi_segmento",
     "bi_ciiu",
     "bi_compania",
     "bi_ranking",
-    "bi_segmento",
 ]
 
 
@@ -27,12 +27,12 @@ def read_header(path):
     return new_header
 
 
-for csv_file in EXPECTED_CSV_FILES:
-    csv_path = CSV_DIRECTORY / f"{csv_file}.csv"
+for tables in TABLES_NAME:
+    csv_path = CSV_DIRECTORY / f"{tables}.csv"
     if not csv_path.exists():
         raise FileNotFoundError(f"Expected CSV file not found: {csv_path}")
     header = read_header(csv_path)
-    print(f"{csv_file} header: {header} and length: {len(header)}")
+    print(f"{tables} header: {header} and length: {len(header)}")
 
 
 load_dotenv()
