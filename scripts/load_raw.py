@@ -22,6 +22,7 @@ from psycopg import sql
 ROOT = Path(__file__).resolve().parents[1]
 CSV_DIRECTORY = ROOT / "data" / "raw"
 RAW_SCHEMA = "raw"
+CHUNK_SIZE = 1 << 20  # 1 MB, for COPY streaming
 
 # Smallest first: if something breaks, you find out in seconds, not minutes.
 EXPECTED_CSV = ["bi_segmento", "bi_ciiu", "bi_compania", "bi_ranking"]
@@ -109,11 +110,23 @@ def verify_table(
         )
 
 
+def load_table(conn: psycopg.Connection, schema: str, table: str, path: Path) -> None:
+    """Load a CSV file into schema.table using COPY. Does NOT commit."""
+
+    copy_stmt = sql.SQL(
+        "COPY {} FROM STDIN WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')"
+    ).format(sql.Identifier(schema, table))
+
+    with conn.cursor() as cur, open(path, "rb") as f, cur.copy(copy_stmt) as copy:
+        while data := f.read(CHUNK_SIZE):
+            copy.write(data)
+
+
 # Entry point
 def main() -> int:
     """Run the load. Returns 0 on success, 1 on error (exit code for the shell)."""
     load_dotenv()
-    table = "bi_segmento"  # EXPECTED_CSV.
+    table = "bi_segmento"
 
     try:
         # Everything that can fail without the database is checked first.
@@ -129,6 +142,7 @@ def main() -> int:
             create_schema(conn, RAW_SCHEMA)
             create_table(conn, RAW_SCHEMA, table, header)
             verify_table(conn, RAW_SCHEMA, table, len(header))
+            load_table(conn, RAW_SCHEMA, table, csv_path(table))
 
             # Single commit point: main decides when everything is saved.
             conn.commit()
