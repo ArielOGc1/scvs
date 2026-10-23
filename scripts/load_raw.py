@@ -48,6 +48,14 @@ def read_header(path: Path) -> list[str]:
     return [col.strip() for col in header]
 
 
+def count_csv_rows(path: Path) -> int:
+    """Count the number of rows in a CSV file (excluding the header)."""
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        reader = csv.reader(f)
+        next(reader)  # Skip header
+        return sum(1 for _ in reader)
+
+
 # Database
 def get_connection() -> psycopg.Connection:
     """Open a connection using the .env variables (required ones fail fast)."""
@@ -73,16 +81,19 @@ def create_schema(conn: psycopg.Connection, schema: str) -> None:
         raise RuntimeError(f"Failed to create schema '{schema}'.")
 
 
-def create_table(
+def recreate_table(
     conn: psycopg.Connection, schema: str, table: str, header: list[str]
 ) -> None:
-    """Create schema.table with one TEXT column per header entry. Does NOT commit."""
+    """Drop and recreate schema.table with one TEXT column per header entry.
+    Does NOT commit."""
+    table_id = sql.Identifier(schema, table)
     columns = sql.SQL(", ").join(
         sql.SQL("{} TEXT").format(sql.Identifier(col)) for col in header
     )
-    conn.execute(
-        sql.SQL("CREATE TABLE {} ({})").format(sql.Identifier(schema, table), columns)
-    )
+    drop_stmt = sql.SQL("DROP TABLE IF EXISTS {}").format(table_id)
+    create_stmt = sql.SQL("CREATE TABLE {} ({})").format(table_id, columns)
+    conn.execute(drop_stmt)
+    conn.execute(create_stmt)
 
 
 def verify_table(
@@ -122,6 +133,23 @@ def load_table(conn: psycopg.Connection, schema: str, table: str, path: Path) ->
             copy.write(data)
 
 
+def verify_row_count(
+    conn: psycopg.Connection, schema: str, table: str, expected_rows: int
+) -> None:
+    """Check that schema.table has the expected number of rows."""
+
+    query_count_row = sql.SQL("SELECT COUNT(*) FROM {}").format(
+        sql.Identifier(schema, table)
+    )
+    count_row = conn.execute(query_count_row).fetchone()
+    actual_rows = count_row[0] if count_row is not None else 0
+    if actual_rows != expected_rows:
+        raise RuntimeError(
+            f"Row count mismatch for '{schema}.{table}': "
+            f"expected {expected_rows}, got {actual_rows}."
+        )
+
+
 # Entry point
 def main() -> int:
     """Run the load. Returns 0 on success, 1 on error (exit code for the shell)."""
@@ -132,6 +160,7 @@ def main() -> int:
         # Everything that can fail without the database is checked first.
         validate_csv_files(EXPECTED_CSV)
         header = read_header(csv_path(table))
+        count_csv_rows_expected = count_csv_rows(csv_path(table))
 
         with get_connection() as conn:
             version_row = conn.execute("SELECT version()").fetchone()
@@ -140,13 +169,16 @@ def main() -> int:
             print(f"Connected: {version_row[0]}")
 
             create_schema(conn, RAW_SCHEMA)
-            create_table(conn, RAW_SCHEMA, table, header)
+            recreate_table(conn, RAW_SCHEMA, table, header)
             verify_table(conn, RAW_SCHEMA, table, len(header))
             load_table(conn, RAW_SCHEMA, table, csv_path(table))
+            verify_row_count(conn, RAW_SCHEMA, table, count_csv_rows_expected)
 
             # Single commit point: main decides when everything is saved.
             conn.commit()
-            print(f"Created {RAW_SCHEMA}.{table} ({len(header)} columns).")
+            print(
+                f"Loaded {RAW_SCHEMA}.{table} {count_csv_rows_expected} rows, {len(header)} columns."
+            )
 
     except KeyError as e:
         print(f"Environment variable not found: {e.args[0]}", file=sys.stderr)
