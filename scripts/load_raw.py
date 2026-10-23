@@ -11,6 +11,7 @@ Usage (venv active and `docker compose up -d` running):
 import csv
 import os
 import sys
+import time
 from pathlib import Path
 
 import psycopg
@@ -154,13 +155,15 @@ def verify_row_count(
 def main() -> int:
     """Run the load. Returns 0 on success, 1 on error (exit code for the shell)."""
     load_dotenv()
-    table = "bi_segmento"
 
+    load_plan = []
     try:
         # Everything that can fail without the database is checked first.
         validate_csv_files(EXPECTED_CSV)
-        header = read_header(csv_path(table))
-        count_csv_rows_expected = count_csv_rows(csv_path(table))
+        for table in EXPECTED_CSV:
+            header = read_header(csv_path(table))
+            expected_rows = count_csv_rows(csv_path(table))
+            load_plan.append((table, header, expected_rows))
 
         with get_connection() as conn:
             version_row = conn.execute("SELECT version()").fetchone()
@@ -169,17 +172,21 @@ def main() -> int:
             print(f"Connected: {version_row[0]}")
 
             create_schema(conn, RAW_SCHEMA)
-            recreate_table(conn, RAW_SCHEMA, table, header)
-            verify_table(conn, RAW_SCHEMA, table, len(header))
-            load_table(conn, RAW_SCHEMA, table, csv_path(table))
-            verify_row_count(conn, RAW_SCHEMA, table, count_csv_rows_expected)
+            for table, header, expected_rows in load_plan:
+                start_time = time.perf_counter()
+                print(f"Loading {RAW_SCHEMA}.{table}...")
+                recreate_table(conn, RAW_SCHEMA, table, header)
+                verify_table(conn, RAW_SCHEMA, table, len(header))
+                load_table(conn, RAW_SCHEMA, table, csv_path(table))
+                verify_row_count(conn, RAW_SCHEMA, table, expected_rows)
+                conn.commit()  # Per table: loaded tables stay saved. Safe because the snapshot is frozen.
+                elapsed_time = time.perf_counter() - start_time
+                print(
+                    f"Loaded {RAW_SCHEMA}.{table} {expected_rows:,} rows, "
+                    f"{len(header)} columns in {elapsed_time:.2f} seconds."
+                )
 
-            # Single commit point: main decides when everything is saved.
-            conn.commit()
-            print(
-                f"Loaded {RAW_SCHEMA}.{table} {count_csv_rows_expected} rows, {len(header)} columns."
-            )
-
+            # Single commit point: main decides when everything is saved
     except KeyError as e:
         print(f"Environment variable not found: {e.args[0]}", file=sys.stderr)
         return 1
