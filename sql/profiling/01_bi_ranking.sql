@@ -4,33 +4,33 @@ WHERE table_schema= 'raw' AND table_name= 'bi_ranking'
 ORDER BY ordinal_position;
 
 -- =============================================================
--- 1.1 RESULTADO (09-nov-2026)
--- 54 columnas, todas de tipo text (esperado: raw guarda el CSV
--- tal cual; el tipado se hace en staging).
+-- 1.1 RESULT (2026-11-09)
+-- 54 columns, all of type text (expected: raw stores the CSV
+-- as-is; typing happens in staging).
 --
--- ALCANCE V1 — columnas que entran a staging:
---   anio            -> filtro anio = 2024
---   expediente      -> llave de la empresa (join con bi_compania, a confirmar en 1.7)
---   ingresos_ventas -> ingreso operativo; base de concentración y margen (P1, P2, P3)
---   utilidad_neta   -> numerador del margen neto (P1, P3)
---   ciiu_n1         -> sector a nivel sección (P1, P3)
---   cod_segmento    -> tamaño de empresa (join con bi_segmento)
---   n_empleados     -> contexto de tamaño y actividad (P4)
+-- V1 SCOPE — columns that go into staging:
+--   anio            -> filter anio = 2024
+--   expediente      -> company key (join with bi_compania, to confirm in 1.7)
+--   ingresos_ventas -> operating revenue; basis for concentration and margin (Q1, Q2, Q3)
+--   utilidad_neta   -> net margin numerator (Q1, Q3)
+--   ciiu_n1         -> sector at section level (Q1, Q3)
+--   cod_segmento    -> company size (join with bi_segmento)
+--   n_empleados     -> size and activity context (Q4)
 --
--- EN OBSERVACIÓN — solo se perfilan:
---   id_estado_financiero -> verificar grano: ¿más de un estado financiero
---                           por empresa en 2024? Si sí, se duplicarían ingresos.
---   ingresos_totales     -> comparado contra ingresos_ventas.
---   ciiu_n6              -> CIIU detallado; solo si se hace drill-down de un sector.
+-- UNDER REVIEW — profiled only:
+--   id_estado_financiero -> check grain: more than one financial statement
+--                           per company in 2024? If so, revenue would be duplicated.
+--   ingresos_totales     -> compared against ingresos_ventas.
+--   ciiu_n6              -> detailed CIIU; only for a sector drill-down.
 --
--- FUERA DE V1:
---   29 ratios precalculados (liquidez, solvencia, gestión, rentabilidad):
---     el margen neto se calcula a partir de los montos para controlar
---     división por cero e ingresos negativos; liquidez/solvencia vuelven
---     en V1.1 (modelo de riesgo crediticio).
---   13 montos y 2 identificadores: ninguna de las 4 preguntas los usa.
+-- OUT OF V1:
+--   29 precomputed ratios (liquidity, solvency, efficiency, profitability):
+--     net margin is computed from the amounts to control division by
+--     zero and negative revenue; liquidity/solvency return in V1.1
+--     (credit-risk model).
+--   13 amounts and 2 identifiers: none of the 4 questions use them.
 --
--- DECISIÓN: ingresos = ingresos_ventas (no ingresos_totales), porque
---   refleja la actividad principal y excluye ingresos puntuales
---   (intereses, venta de activos) que distorsionan tamaño y margen.
+-- DECISION: revenue = ingresos_ventas (not ingresos_totales), because
+--   it reflects core activity and excludes one-off income
+--   (interest, asset sales) that distorts size and margin.
 -- =============================================================
