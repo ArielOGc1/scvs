@@ -246,6 +246,17 @@ ORDER BY cod_segmento;
 --   - Keep id_segmento: needed as "Sort by" column in Power BI, since
 --     segment names sort alphabetically in a meaningless order.
 
+-- 2.8 Company names: padding, NULLs, empty strings and duplicates?
+   SELECT
+       COUNT(*)                                             AS total,
+       COUNT(*) FILTER (WHERE nombre <> TRIM(nombre))       AS con_relleno,
+       COUNT(*) FILTER (WHERE nombre IS NULL)               AS nulos,
+       COUNT(*) FILTER (WHERE TRIM(nombre) = '')            AS vacios,
+       COUNT(DISTINCT TRIM(nombre))                         AS distintos
+   FROM raw.bi_compania;
+   --   - 2.8 nombre: 11 padded, 0 NULL/empty -> TRIM. 398 duplicate names
+--     (key is expediente, not nombre); disambiguate in top-10 if needed
+
 -- =====================================================================
 -- Summary: staging decisions for dimensions
 -- =====================================================================
