@@ -54,12 +54,12 @@ WHERE rank_in_sector <= 4
 GROUP BY sector, n_companies, sector_sales
 ORDER BY top3_share_pct DESC;
 -- Findings (5.3):
--- - Metric: CR4 = share of sector sales held by the sector's 3 largest companies.
--- - Most concentrated sectors (>= 30 companies): Electricidad y gas (63.42%),
---   Mineria (44.64%), Informacion y TIC (41.79%), Agua y saneamiento (41.55%).
+-- - Metric: CR4 = share of sector sales held by the sector's 4 largest companies.
+-- - Most concentrated sectors (>= 30 companies): Electricidad y gas (70.70%),
+--   Mineria (51.03%), Agua y saneamiento (45.12%), Informacion y TIC (44.07%).
 --   All are capital- or infrastructure-intensive (hypothesis, not tested here).
 -- - Paradox: Comercio places 5 companies in the national top 10 (5.1), yet it is
---   one of the least concentrated sectors (CR4 = 7.93% across 37,114 companies).
+--   one of the least concentrated sectors (CR4 = 9.50% across 37,114 companies).
 -- - Sectors with fewer than 30 companies (Sector publico, Hogares empleadores,
 --   Org. internacionales) show CR4 near or at 100% by construction; excluded
 --   from conclusions (same threshold applies in Q3).
