@@ -1,0 +1,135 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "a9f9e5e4ab25c49b7749",
+  "position": {
+    "x": 830.15197568389056,
+    "y": 283.03951367781156,
+    "z": 6000,
+    "height": 141.51975683890578,
+    "width": 941.03343465045589,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ciiu_seccion"
+                    }
+                  },
+                  "Property": "sector"
+                }
+              },
+              "queryRef": "ciiu_seccion.sector",
+              "nativeQueryRef": "sector"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ciiu_seccion"
+                    }
+                  },
+                  "Property": "CR4"
+                }
+              },
+              "queryRef": "ciiu_seccion.CR4",
+              "nativeQueryRef": "CR4"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Empresas activas"
+                }
+              },
+              "queryRef": "ranking_2025.Empresas activas",
+              "nativeQueryRef": "Empresas activas"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ciiu_seccion"
+                  }
+                },
+                "Property": "CR4"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3c141e2d573e07e07b38",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ranking_2025"
+              }
+            },
+            "Property": "Empresas activas"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "r",
+              "Entity": "ranking_2025",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "r"
+                        }
+                      },
+                      "Property": "Empresas activas"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "30L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "06fde398db932235e48e",
+  "position": {
+    "x": 26.261398176291792,
+    "y": 461.03343465045594,
+    "z": 7000,
+    "height": 548.57142857142856,
+    "width": 846.20060790273556,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "compania"
+                    }
+                  },
+                  "Property": "provincia"
+                }
+              },
+              "queryRef": "compania.provincia",
+              "nativeQueryRef": "provincia"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Empresas"
+                }
+              },
+              "queryRef": "ranking_2025.Empresas",
+              "nativeQueryRef": "Empresas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Empresas activas"
+                }
+              },
+              "queryRef": "ranking_2025.Empresas activas",
+              "nativeQueryRef": "Empresas activas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Tasa de actividad"
+                }
+              },
+              "queryRef": "ranking_2025.Tasa de actividad",
+              "nativeQueryRef": "Tasa de actividad"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ciiu_seccion"
+                    }
+                  },
+                  "Property": "% Empresas activas"
+                }
+              },
+              "queryRef": "ciiu_seccion.% Empresas activas",
+              "nativeQueryRef": "% Empresas activas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "% Ventas"
+                }
+              },
+              "queryRef": "ranking_2025.% Ventas",
+              "nativeQueryRef": "% Ventas"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "compania"
+                  }
+                },
+                "Property": "provincia"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "154820391c37451d8113",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "compania"
+              }
+            },
+            "Property": "provincia"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3024d3b12c790776059b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ranking_2025"
+              }
+            },
+            "Property": "Empresas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6e61250be20842329a26",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ranking_2025"
+              }
+            },
+            "Property": "Empresas activas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a052a19a00004a1c10a4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ranking_2025"
+              }
+            },
+            "Property": "Tasa de actividad"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "623d96481773a55162d3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ciiu_seccion"
+              }
+            },
+            "Property": "% Empresas activas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "42f90cb2c14367104b4c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ranking_2025"
+              }
+            },
+            "Property": "% Ventas"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

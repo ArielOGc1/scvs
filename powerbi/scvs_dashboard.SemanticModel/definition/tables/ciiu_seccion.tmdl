@@ -1,0 +1,58 @@
+table ciiu_seccion
+	lineageTag: ce8c5efe-155a-4d56-876a-ef7e72ae3734
+
+	measure CR4 =
+			
+			VAR top4 =
+			    TOPN ( 4, VALUES ( ranking_2025[expediente] ), [Ventas], DESC )
+			RETURN
+			    DIVIDE ( CALCULATE ( [Ventas], top4 ), [Ventas] )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 204fad81-625b-470b-907a-6e4c92a368dd
+
+	measure '% Empresas activas' =
+			
+			DIVIDE (
+			    [Empresas activas],
+			    CALCULATE ( [Empresas activas], ALL ( ranking_2025 ) )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5880ed48-a299-4fe7-9846-60db2fd786d8
+
+	column ciiu
+		dataType: string
+		lineageTag: d50af506-6353-4d84-8269-1b58bc0c5c1a
+		summarizeBy: none
+		sourceColumn: ciiu
+
+		annotation SummarizationSetBy = Automatic
+
+	column descripcion
+		dataType: string
+		lineageTag: 9ef20eb8-8a2e-46d3-a9c4-d9fb08bd61c6
+		summarizeBy: none
+		sourceColumn: descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector
+		dataType: string
+		lineageTag: 24b09cd5-ad73-42d0-94c0-7ca258067e93
+		summarizeBy: none
+		sourceColumn: sector
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ciiu_seccion = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "scvs"),
+				  #"Navigation 1" = Source{[Schema = "staging", Item = "ciiu_seccion"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

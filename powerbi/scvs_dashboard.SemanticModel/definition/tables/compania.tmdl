@@ -1,0 +1,63 @@
+table compania
+	lineageTag: 33db67be-4cce-4952-9006-32eb5a5bbd9e
+
+	column expediente
+		dataType: string
+		lineageTag: 5d2c2a5b-3568-49af-bc0e-da1dfe703e35
+		summarizeBy: none
+		sourceColumn: expediente
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: 5b0f8bc2-0605-4cc8-b61f-55d7c10446a7
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo
+		dataType: string
+		lineageTag: f16752e4-81d9-4d89-86de-e291e922ee47
+		summarizeBy: none
+		sourceColumn: tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column pro_codigo
+		dataType: string
+		lineageTag: 242dcc63-1017-4174-9f7d-b94a8820d0cf
+		summarizeBy: none
+		sourceColumn: pro_codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column provincia
+		dataType: string
+		lineageTag: 54d7cfd3-0d67-4740-84f6-1e6f49cc60ce
+		summarizeBy: none
+		sourceColumn: provincia
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Provincia mapa' = compania[provincia] & ", Ecuador"
+		lineageTag: 1d336f7c-908f-495c-a843-1f71c61d5af3
+		dataCategory: StateOrProvince
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition compania = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "scvs"),
+				  #"Navigation 1" = Source{[Schema = "staging", Item = "compania"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "e4688c02ac96b87027d5",
+  "position": {
+    "x": 950,
+    "y": 110,
+    "z": 2000,
+    "height": 100,
+    "width": 295,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Utilidad neta"
+                }
+              },
+              "queryRef": "ranking_2025.Utilidad neta",
+              "nativeQueryRef": "Utilidad neta"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ranking_2025"
+                  }
+                },
+                "Property": "Utilidad neta"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "ranking_2025.Utilidad neta"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

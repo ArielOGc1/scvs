@@ -1,0 +1,139 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "6e67ea99333802d404c4",
+  "position": {
+    "x": 872.46200607902733,
+    "y": 11.671732522796352,
+    "z": 4000,
+    "height": 271.36778115501522,
+    "width": 1047.5379939209727,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ciiu_seccion"
+                    }
+                  },
+                  "Property": "sector"
+                }
+              },
+              "queryRef": "ciiu_seccion.sector",
+              "nativeQueryRef": "sector"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "% Ventas"
+                }
+              },
+              "queryRef": "ranking_2025.% Ventas",
+              "nativeQueryRef": "% Ventas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Margen agregado"
+                }
+              },
+              "queryRef": "ranking_2025.Margen agregado",
+              "nativeQueryRef": "Margen agregado"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Margen mediano"
+                }
+              },
+              "queryRef": "ranking_2025.Margen mediano",
+              "nativeQueryRef": "Margen mediano"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Empresas"
+                }
+              },
+              "queryRef": "ranking_2025.Empresas",
+              "nativeQueryRef": "Empresas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Empresas activas"
+                }
+              },
+              "queryRef": "ranking_2025.Empresas activas",
+              "nativeQueryRef": "Empresas activas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Utilidad neta"
+                }
+              },
+              "queryRef": "ranking_2025.Utilidad neta",
+              "nativeQueryRef": "Utilidad neta"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ranking_2025"
+                  }
+                },
+                "Property": "% Ventas"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

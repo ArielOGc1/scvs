@@ -1,0 +1,12 @@
+relationship AutoDetected_00e8e5ed-72a0-4520-be34-eb59dfccc983
+	fromColumn: ranking_2025.expediente
+	toColumn: compania.expediente
+
+relationship 24dabbbf-6436-e55f-0666-50a52a9cc24d
+	fromColumn: ranking_2025.ciiu_n1
+	toColumn: ciiu_seccion.ciiu
+
+relationship ba0a03ac-8624-c93b-7830-7db664969797
+	fromColumn: ranking_2025.cod_segmento
+	toColumn: segmento.id_segmento
+

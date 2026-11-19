@@ -1,0 +1,294 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "c1183202c0e90eade408",
+  "position": {
+    "x": 19.984387197501952,
+    "y": 95,
+    "z": 5001,
+    "height": 620,
+    "width": 615,
+    "tabOrder": 5001
+  },
+  "visual": {
+    "visualType": "azureMap",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "compania"
+                    }
+                  },
+                  "Property": "Provincia mapa"
+                }
+              },
+              "queryRef": "compania.Provincia mapa",
+              "nativeQueryRef": "Provincia mapa",
+              "active": true
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Ventas"
+                }
+              },
+              "queryRef": "ranking_2025.Ventas",
+              "nativeQueryRef": "Ventas"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "% Ventas"
+                }
+              },
+              "queryRef": "ranking_2025.% Ventas",
+              "nativeQueryRef": "% Ventas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ciiu_seccion"
+                    }
+                  },
+                  "Property": "% Empresas activas"
+                }
+              },
+              "queryRef": "ciiu_seccion.% Empresas activas",
+              "nativeQueryRef": "% Empresas activas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ranking_2025"
+                    }
+                  },
+                  "Property": "Tasa de actividad"
+                }
+              },
+              "queryRef": "ranking_2025.Tasa de actividad",
+              "nativeQueryRef": "Tasa de actividad"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "mapControls": [
+        {
+          "properties": {
+            "zoom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4.8D"
+                }
+              }
+            },
+            "centerLatitude": {
+              "expr": {
+                "Literal": {
+                  "Value": "-1.6137262498446319D"
+                }
+              }
+            },
+            "centerLongitude": {
+              "expr": {
+                "Literal": {
+                  "Value": "-83.04525375366211D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "bubbleLayer": [
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "compania"
+                          }
+                        },
+                        "Property": "Provincia mapa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'ZAMORA CHINCHIPE, Ecuador'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "strokeColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ventas por provincia'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Guayas + Pichincha: 79,20% de las ventas. Provincia = domicilio legal'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8be6b90d1303531adbba",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "compania"
+              }
+            },
+            "Property": "Provincia mapa"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7e3b12403d431cec2ac4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ranking_2025"
+              }
+            },
+            "Property": "Ventas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5412ed42c8ddb6c397e6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ranking_2025"
+              }
+            },
+            "Property": "% Ventas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e3ff26367b10e846731e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ciiu_seccion"
+              }
+            },
+            "Property": "% Empresas activas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "de5d49aeb006380c18e3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ranking_2025"
+              }
+            },
+            "Property": "Tasa de actividad"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

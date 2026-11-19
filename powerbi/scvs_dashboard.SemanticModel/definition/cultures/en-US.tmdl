@@ -1,0 +1,1982 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "ciiu_seccion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ciiu_seccion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ciiu seccion": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ciiu_seccion": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "ciiu_seccion.ciiu": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ciiu_seccion",
+			          "ConceptualProperty": "ciiu"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ciiu": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ciiu_seccion.descripcion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ciiu_seccion",
+			          "ConceptualProperty": "descripcion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "descripcion": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ciiu_seccion.sector": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ciiu_seccion",
+			          "ConceptualProperty": "sector"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sector": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "subdivision": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "division": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "segment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "area": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "region": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "zone": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "district": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "ciiu_seccion.cr_4": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ciiu_seccion",
+			          "ConceptualProperty": "CR4"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cr 4": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CR4": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "ciiu_seccion.empresas_activas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ciiu_seccion",
+			          "ConceptualProperty": "% Empresas activas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% empresas activas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage empresa activa": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct empresa activa": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "% activas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "compania": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "compania"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "compania": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "compania.expediente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "compania",
+			          "ConceptualProperty": "expediente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expediente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "compania.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "compania",
+			          "ConceptualProperty": "nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "compania.tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "compania",
+			          "ConceptualProperty": "tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "compania.pro_codigo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "compania",
+			          "ConceptualProperty": "pro_codigo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pro codigo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pro_codigo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "authority codigo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "maven codigo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "ace codigo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "professional codigo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "expert codigo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "specialist codigo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "compania.provincia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "compania",
+			          "ConceptualProperty": "provincia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "provincia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "compania.provincia_mapa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "compania",
+			          "ConceptualProperty": "Provincia mapa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "provincia mapa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "state or province": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "ranking_2025": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ranking 2025": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ranking_2025": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.anio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "anio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "anio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.expediente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "expediente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "expediente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.ingresos_venta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "ingresos_ventas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ingresos venta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ingreso venta": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "ingresos_ventas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.utilidad_neta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "utilidad_neta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "utilidad neta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "utilidad_neta": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.ciiu_n_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "ciiu_n1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "ciiu n 1": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ciiu_n1": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.cod_segmento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "cod_segmento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "cod segmento": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cod_segmento": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.n_empleado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "n_empleados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "n empleado": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "n_empleados": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.empresas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "Empresas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "empresas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.ventas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "Ventas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ventas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.utilidad_neta1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "Utilidad neta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "utilidad neta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.empresas_activas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "Empresas activas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "empresas activas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "activas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.ventas1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "% Ventas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% ventas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage venta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "pct venta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.utilidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "% Utilidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% utilidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage utilidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "pct utilidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.margen_agregado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "Margen agregado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "margen agregado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.margen_mediano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "Margen mediano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "margen mediano": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ranking_2025.tasa_de_actividad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ranking_2025",
+			          "ConceptualProperty": "Tasa de actividad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tasa de actividad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Tasa act": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "segmento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "segmento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "segmento": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "segmento.id_segmento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "segmento",
+			          "ConceptualProperty": "id_segmento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id segmento": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "id_segmento": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification segmento": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity segmento": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier segmento": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential segmento": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "segmento.segmento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "segmento",
+			          "ConceptualProperty": "segmento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "segmento": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "segmento name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    }
+			  },
+			  "Relationships": {
+			    "ranking_2025_has_ciiu_seccion": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ciiu_seccion": {
+			          "Target": {
+			            "Entity": "ciiu_seccion"
+			          },
+			          "Nouns": [
+			            {
+			              "ciiu n 1": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ciiu_seccion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_ciiu_seccions"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ciiu_seccion"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ciiu_seccions_have_ranking_2025"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_compania": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "compania": {
+			          "Target": {
+			            "Entity": "compania"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "compania"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_companias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "compania"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "companias_have_ranking_2025"
+			        }
+			      ]
+			    },
+			    "segmento_has_segmento": {
+			      "Binding": {
+			        "ConceptualEntity": "segmento"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "segmento": {
+			          "Target": {
+			            "Entity": "segmento"
+			          }
+			        },
+			        "segmento.segmento": {
+			          "Target": {
+			            "Entity": "segmento.segmento"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "segmento"
+			            },
+			            "Object": {
+			              "Role": "segmento.segmento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "segmentos_have_segmentos"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "segmento"
+			            },
+			            "Name": {
+			              "Role": "segmento.segmento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "segmentos_are_names_IDs_of_segmentos"
+			        }
+			      ]
+			    },
+			    "segmento_has_id_segmento": {
+			      "Binding": {
+			        "ConceptualEntity": "segmento"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "segmento": {
+			          "Target": {
+			            "Entity": "segmento"
+			          }
+			        },
+			        "segmento.id_segmento": {
+			          "Target": {
+			            "Entity": "segmento.id_segmento"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "segmento"
+			            },
+			            "Object": {
+			              "Role": "segmento.id_segmento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "segmentos_have_id_segmentos"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_tasa_de_actividad": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.tasa_de_actividad": {
+			          "Target": {
+			            "Entity": "ranking_2025.tasa_de_actividad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.tasa_de_actividad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_tasa_de_actividad"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_margen_mediano": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.margen_mediano": {
+			          "Target": {
+			            "Entity": "ranking_2025.margen_mediano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.margen_mediano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_margen_mediano"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_margen_agregado": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.margen_agregado": {
+			          "Target": {
+			            "Entity": "ranking_2025.margen_agregado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.margen_agregado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_margen_agregado"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_utilidad": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.utilidad": {
+			          "Target": {
+			            "Entity": "ranking_2025.utilidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.utilidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have__utilidad"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_ventas1": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.ventas1": {
+			          "Target": {
+			            "Entity": "ranking_2025.ventas1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.ventas1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have__ventas"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_empresas_activas": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.empresas_activas": {
+			          "Target": {
+			            "Entity": "ranking_2025.empresas_activas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.empresas_activas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_empresas_activas"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_utilidad_neta1": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.utilidad_neta1": {
+			          "Target": {
+			            "Entity": "ranking_2025.utilidad_neta1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.utilidad_neta1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_utilidad_neta"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_ventas": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.ventas": {
+			          "Target": {
+			            "Entity": "ranking_2025.ventas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.ventas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_ventas"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_empresas": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.empresas": {
+			          "Target": {
+			            "Entity": "ranking_2025.empresas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.empresas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_empresas"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_n_empleado": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.n_empleado": {
+			          "Target": {
+			            "Entity": "ranking_2025.n_empleado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.n_empleado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_n_empleados"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_utilidad_neta": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.utilidad_neta": {
+			          "Target": {
+			            "Entity": "ranking_2025.utilidad_neta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.utilidad_neta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_utilidad_netas"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_ingresos_venta": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.ingresos_venta": {
+			          "Target": {
+			            "Entity": "ranking_2025.ingresos_venta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.ingresos_venta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_ingresos_ventas"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_anio": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ranking_2025.anio": {
+			          "Target": {
+			            "Entity": "ranking_2025.anio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025.anio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_anios"
+			        }
+			      ]
+			    },
+			    "compania_has_provincia_mapa": {
+			      "Binding": {
+			        "ConceptualEntity": "compania"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "compania": {
+			          "Target": {
+			            "Entity": "compania"
+			          }
+			        },
+			        "compania.provincia_mapa": {
+			          "Target": {
+			            "Entity": "compania.provincia_mapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "compania"
+			            },
+			            "Object": {
+			              "Role": "compania.provincia_mapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "companias_have_provincia_mapas"
+			        }
+			      ]
+			    },
+			    "compania_has_provincia": {
+			      "Binding": {
+			        "ConceptualEntity": "compania"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "compania": {
+			          "Target": {
+			            "Entity": "compania"
+			          }
+			        },
+			        "compania.provincia": {
+			          "Target": {
+			            "Entity": "compania.provincia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "compania"
+			            },
+			            "Object": {
+			              "Role": "compania.provincia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "companias_have_provincias"
+			        }
+			      ]
+			    },
+			    "compania_has_pro_codigo": {
+			      "Binding": {
+			        "ConceptualEntity": "compania"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "compania": {
+			          "Target": {
+			            "Entity": "compania"
+			          }
+			        },
+			        "compania.pro_codigo": {
+			          "Target": {
+			            "Entity": "compania.pro_codigo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "compania"
+			            },
+			            "Object": {
+			              "Role": "compania.pro_codigo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "companias_have_pro_codigo"
+			        }
+			      ]
+			    },
+			    "compania_has_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "compania"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "compania": {
+			          "Target": {
+			            "Entity": "compania"
+			          }
+			        },
+			        "compania.tipo": {
+			          "Target": {
+			            "Entity": "compania.tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "compania"
+			            },
+			            "Object": {
+			              "Role": "compania.tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "companias_have_tipos"
+			        }
+			      ]
+			    },
+			    "compania_has_nombre": {
+			      "Binding": {
+			        "ConceptualEntity": "compania"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "compania": {
+			          "Target": {
+			            "Entity": "compania"
+			          }
+			        },
+			        "compania.nombre": {
+			          "Target": {
+			            "Entity": "compania.nombre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "compania"
+			            },
+			            "Object": {
+			              "Role": "compania.nombre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "companias_have_nombres"
+			        }
+			      ]
+			    },
+			    "compania_has_expediente": {
+			      "Binding": {
+			        "ConceptualEntity": "compania"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "compania": {
+			          "Target": {
+			            "Entity": "compania"
+			          }
+			        },
+			        "compania.expediente": {
+			          "Target": {
+			            "Entity": "compania.expediente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "compania"
+			            },
+			            "Object": {
+			              "Role": "compania.expediente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "companias_have_expedientes"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_ciiu_seccion_empresas_activas": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ciiu_seccion.empresas_activas": {
+			          "Target": {
+			            "Entity": "ciiu_seccion.empresas_activas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ciiu_seccion.empresas_activas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have__empresas_activas"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_ciiu_seccion_cr_4": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "ciiu_seccion.cr_4": {
+			          "Target": {
+			            "Entity": "ciiu_seccion.cr_4"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "ciiu_seccion.cr_4"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_cr_4"
+			        }
+			      ]
+			    },
+			    "ciiu_seccion_has_sector": {
+			      "Binding": {
+			        "ConceptualEntity": "ciiu_seccion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ciiu_seccion": {
+			          "Target": {
+			            "Entity": "ciiu_seccion"
+			          }
+			        },
+			        "ciiu_seccion.sector": {
+			          "Target": {
+			            "Entity": "ciiu_seccion.sector"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ciiu_seccion"
+			            },
+			            "Object": {
+			              "Role": "ciiu_seccion.sector"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ciiu_seccions_have_sectors"
+			        }
+			      ]
+			    },
+			    "ciiu_seccion_has_descripcion": {
+			      "Binding": {
+			        "ConceptualEntity": "ciiu_seccion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ciiu_seccion": {
+			          "Target": {
+			            "Entity": "ciiu_seccion"
+			          }
+			        },
+			        "ciiu_seccion.descripcion": {
+			          "Target": {
+			            "Entity": "ciiu_seccion.descripcion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ciiu_seccion"
+			            },
+			            "Object": {
+			              "Role": "ciiu_seccion.descripcion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ciiu_seccions_have_descripcions"
+			        }
+			      ]
+			    },
+			    "ciiu_seccion_has_ciiu": {
+			      "Binding": {
+			        "ConceptualEntity": "ciiu_seccion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ciiu_seccion": {
+			          "Target": {
+			            "Entity": "ciiu_seccion"
+			          }
+			        },
+			        "ciiu_seccion.ciiu": {
+			          "Target": {
+			            "Entity": "ciiu_seccion.ciiu"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ciiu_seccion"
+			            },
+			            "Object": {
+			              "Role": "ciiu_seccion.ciiu"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ciiu_seccions_have_ciius"
+			        }
+			      ]
+			    },
+			    "compania_in_provincia_mapa": {
+			      "Binding": {
+			        "ConceptualEntity": "compania"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "compania": {
+			          "Target": {
+			            "Entity": "compania"
+			          }
+			        },
+			        "compania.provincia_mapa": {
+			          "Target": {
+			            "Entity": "compania.provincia_mapa"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "compania.provincia_mapa"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "compania"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "compania.provincia_mapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "companias_are_in_provincia_mapas"
+			        }
+			      ]
+			    },
+			    "ranking_2025_has_segmento": {
+			      "Binding": {
+			        "ConceptualEntity": "ranking_2025"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ranking_2025": {
+			          "Target": {
+			            "Entity": "ranking_2025"
+			          }
+			        },
+			        "segmento": {
+			          "Target": {
+			            "Entity": "segmento"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ranking_2025"
+			            },
+			            "Object": {
+			              "Role": "segmento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ranking_2025_have_segmentos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "segmento"
+			            },
+			            "Object": {
+			              "Role": "ranking_2025"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "segmentos_have_ranking_2025"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

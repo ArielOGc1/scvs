@@ -1,0 +1,125 @@
+table ranking_2025
+	lineageTag: 14819883-e007-497d-af38-1810ca0babad
+
+	measure Empresas = COUNTROWS( ranking_2025 )
+		formatString: #,0
+		lineageTag: e2749569-0e44-4ac4-b75d-637ae6b5e455
+
+	measure Ventas = SUM ( ranking_2025[ingresos_ventas] )
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 5d1ae889-9c65-406b-bfb7-efade31cf10c
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Utilidad neta' = SUM ( ranking_2025[utilidad_neta] )
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: dc3ff18c-7dd9-4772-bd4d-d073db4b61dd
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Empresas activas' = CALCULATE( [Empresas], ranking_2025[ingresos_ventas] > 0 )
+		formatString: #,0
+		lineageTag: 8a4d1ec9-dfcc-45f3-894c-694b7343030a
+
+	measure '% Ventas' = DIVIDE( [Ventas], CALCULATE( [Ventas], ALL (ranking_2025 ) ) )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e7d9fc97-dc8f-49a7-9dcc-4f20c169f31d
+
+	measure '% Utilidad' = DIVIDE ( [Utilidad neta], CALCULATE( [Utilidad neta], ALL ( ranking_2025 ) ) )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 296150aa-58cf-42c5-8c80-e23b1011031a
+
+	measure 'Margen agregado' = DIVIDE ( CALCULATE( [Utilidad neta], ranking_2025[ingresos_ventas] > 0 ), CALCULATE( [Ventas], ranking_2025[ingresos_ventas] > 0 ) )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 89c37f3e-2e87-490d-8cc1-18bca3511289
+
+	measure 'Margen mediano' =
+			
+			MEDIANX (
+			    FILTER ( ranking_2025, ranking_2025[ingresos_ventas] > 0 ),
+			    DIVIDE ( ranking_2025[utilidad_neta], ranking_2025[ingresos_ventas] )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 521d0bdc-11b9-4823-82bd-dae352699c2d
+
+	measure 'Tasa de actividad' =
+			
+			DIVIDE ( [Empresas activas], [Empresas] )
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 8d40b5e9-2cc8-4de6-bb93-c9199a03dddd
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: e1c92ab7-47ac-466c-9767-91cc57f4dd3d
+		summarizeBy: none
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = User
+
+	column expediente
+		dataType: string
+		lineageTag: a7913030-c20e-4c31-99c9-81993b03f367
+		summarizeBy: none
+		sourceColumn: expediente
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingresos_ventas
+		dataType: double
+		lineageTag: 2a00a647-0603-438e-b68e-97532c1b0114
+		summarizeBy: sum
+		sourceColumn: ingresos_ventas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column utilidad_neta
+		dataType: double
+		lineageTag: d8a05c11-0955-435a-bd0f-a81bb58479a7
+		summarizeBy: sum
+		sourceColumn: utilidad_neta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ciiu_n1
+		dataType: string
+		lineageTag: b933ed6a-34d4-447d-a53a-c9d341fc5a21
+		summarizeBy: none
+		sourceColumn: ciiu_n1
+
+		annotation SummarizationSetBy = Automatic
+
+	column cod_segmento
+		dataType: string
+		lineageTag: f92dec98-d24e-4997-abb5-7d8f33c44fab
+		summarizeBy: none
+		sourceColumn: cod_segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_empleados
+		dataType: int64
+		formatString: 0
+		lineageTag: 2fc90c07-566e-4835-9e17-9aa03416d364
+		summarizeBy: sum
+		sourceColumn: n_empleados
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ranking_2025 = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "scvs"),
+				  #"Navigation 1" = Source{[Schema = "staging", Item = "ranking_2025"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

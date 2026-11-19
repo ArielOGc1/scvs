@@ -1,0 +1,32 @@
+table segmento
+	lineageTag: ead1476a-e414-4ccb-84a8-ebb1dceaea20
+
+	column id_segmento
+		dataType: string
+		lineageTag: a09d882b-ebfd-49be-9274-a8c9b2d13d6e
+		summarizeBy: none
+		sourceColumn: id_segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column segmento
+		dataType: string
+		lineageTag: 9b3678a1-6e85-422f-a6e1-bda9a4cbbecb
+		summarizeBy: none
+		sourceColumn: segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	partition segmento = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "scvs"),
+				  #"Navigation 1" = Source{[Schema = "staging", Item = "segmento"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
