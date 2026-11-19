@@ -221,14 +221,3 @@ El código y los comentarios están en inglés; los nombres de columna de la SCV
 | `v0.3` | Análisis SQL (Q1–Q4) |
 | `v0.4` | Dashboard de Power BI |
 | `v1.0` | Documentación y publicación |
-
----
-
-## Siguientes pasos (V1.1)
-
-Un modelo de scoring de riesgo crediticio / salud financiera sobre los mismos datos financieros de la SCVS, servido con FastAPI en Docker y desplegado en la nube.
-
----
-
-
-Fuente de los datos: Superintendencia de Compañías, Valores y Seguros del Ecuador (datos públicos).

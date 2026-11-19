@@ -222,13 +222,3 @@ Code and comments are in English; SCVS source column names are kept in Spanish.
 | `v0.4` | Power BI dashboard |
 | `v1.0` | Documentation and release |
 
----
-
-## Next steps (V1.1)
-
-A credit-risk / financial-health scoring model on the same SCVS financial data, served with FastAPI in Docker and deployed to the cloud.
-
----
-
-
-Data source: Superintendencia de Compañías, Valores y Seguros del Ecuador (public data).
