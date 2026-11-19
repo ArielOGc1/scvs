@@ -3,3 +3,6 @@
 data/raw/
 __pycache__/
 .ipynb_checkpoints/
+*.pbix
+**/.pbi/cache.abf
+**/.pbi/localSettings.json
